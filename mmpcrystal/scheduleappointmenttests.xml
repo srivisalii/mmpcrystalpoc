@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Suite" verbose="5">
-	<test name="Test1">
-	<parameter name="doctor" value="Charlie" />
-	<parameter name="specialization" value="Cardiologist" />
-	<parameter name="time" value="12pm" />
+	
+	<test name="scheduleAppointment">
+	<parameter name="doctor" value="Charile" />
 	<parameter name="days" value="80" />
-	<parameter name="dateformat" value="dd/MM/YYYY" />
-	<parameter name="symptoms" value="fever" />
+	<parameter name="time" value="11Am" />
+	<parameter name="sym" value="cold" />
 	
 		<classes>
-			<class name="org.iit.healthcare.mmp.tests.ScheduleAppointmentDatePickerTests" />
+			<class name="org.iit.healthcare.mmp.tests.ScheduleAppointmentPage" />
 		</classes>
 	</test> 
+	
 </suite> <!-- Suite -->

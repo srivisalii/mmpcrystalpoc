@@ -5,6 +5,7 @@ import java.util.HashMap;
 
 import org.h2k.util.AppLibrary;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Action;
@@ -67,30 +68,30 @@ public class ScheduleAppointmentPage {
 		expectedHMap.put("date", datePickerWE.getAttribute("value"));
  
 
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//select[@name='time']")));
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(7));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//select[@id='time']")));
 
-		WebElement timeWebEle = driver.findElement(By.xpath("//select[@name='time']"));
+		/*WebElement timeWebEle = driver.findElement(By.xpath("//select[@id='time']"));
 		Actions myActions = new Actions(driver);
 		Action mydblclick = myActions.click(timeWebEle).build();
 		mydblclick.perform();
 
-		// driver.findElement(By.xpath("//p[text()='Time:']")).click();
+		driver.findElement(By.xpath("//p[text()='Time:']")).click();*/
+		
 
-		Select selectTime = new Select(driver.findElement(By.xpath("//select[@name='time']")));
-
+		Select selectTimeWE = new Select(driver.findElement(By.xpath("//select[@id='time']")));
+        selectTimeWE.selectByVisibleText(time);
+		
 		System.out.println("time -------->>>>>" + time);
 
-		selectTime.selectByVisibleText(time);
 
 		expectedHMap.put("time", time);
 
-		/*
-		 * List<WebElement> selectOpt = selectTime.getAllSelectedOptions();
-		 *
-		 * System.out.println("selectOpt ------->>>>"+selectOpt);
-		 */
-
+		
+		/*JavascriptExecutor jse=(JavascriptExecutor)driver;
+		
+		jse.executeScript("window.scrollBy(0,400)");*/
+		
 		driver.findElement(By.xpath("//button[text() = 'Continue']")).click();
 		
 		driver.switchTo().defaultContent();

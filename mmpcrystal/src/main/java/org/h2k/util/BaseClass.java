@@ -47,7 +47,7 @@ public class BaseClass {
 		if(environment.equals("qa"))
 		{
 			prop=loadProperties("config/mmp_qa.properties");
-			System.out.println("url" + prop.getProperty("url"));
+			System.out.println("url" + prop.getProperty("patientURL"));
 		}
 		else if(environment.equals("dev"))
 		{
