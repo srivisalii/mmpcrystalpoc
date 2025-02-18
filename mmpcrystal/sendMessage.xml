@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite" verbose="5">
+	
+	<test name="sendMessage">
+	
+	<parameter name="conreason" value="Headache" />
+	<parameter name="subject" value="I have headache for last 1 day" />
+		<classes>
+			<class name="org.iit.healthcare.mmp.tests.SendMessageTest" />
+		</classes>
+	</test> 
+	
+</suite> <!-- Suite -->
